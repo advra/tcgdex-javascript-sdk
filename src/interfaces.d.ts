@@ -1,5 +1,9 @@
-export type SupportedLanguages = 'en' | 'fr' | 'es' | 'it' | 'pt' | 'de'
-
+export type SupportedLanguages = 
+	// inter languages
+	'en' | 'fr' | 'es' | 'es-mx' | 'it' | 'pt' | 'pt-br' | 'pt-pt' | 'de' | 'nl' | 'pl' | 'ru' |
+	// Asian languages
+	'ja' | 'ko' | 'zh-tw' | 'id' | 'th' | 'zh-cn'
+	
 /**
  * @deprecated This is not used anymore in the API V2
  */
