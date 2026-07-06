@@ -86,8 +86,8 @@ export interface TcgplayerVariantPricing {
  */
 export interface Pricing {
   cardmarket?: {
-    idProduct: number;
-    updated?: number;
+    idProduct?: number;
+    updated?: string;
     unit?: string;
     avg?: number;
     low?: number;
@@ -104,7 +104,7 @@ export interface Pricing {
   }
   tcgplayer?: {
     productId: number;
-    updated: number;
+    updated: string;
     unit: string;
     normal?: TcgplayerVariantPricing;
     holofoil?: TcgplayerVariantPricing;
