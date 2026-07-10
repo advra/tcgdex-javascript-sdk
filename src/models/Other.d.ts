@@ -80,6 +80,18 @@ export interface TcgplayerVariantPricing {
 	directLowPrice: number;
 }
 
+const TCGPLAYER_VARIANTS = [
+	'normal',
+	'holofoil',
+	'reverse-holofoil',
+	'1st-edition',
+	'1st-edition-holofoil',
+	'unlimited',
+	'unlimited-holofoil',
+] as const;
+
+type TcgplayerVariantKey = typeof TCGPLAYER_VARIANTS[number];
+
 /**
  * Market pricing information from multiple sources
  */
@@ -105,12 +117,9 @@ export interface Pricing {
 		productId: number;
 		updated: string;
 		unit: string;
-		normal?: TcgplayerVariantPricing;
-		holofoil?: TcgplayerVariantPricing;
-		'reverse-holofoil'?: TcgplayerVariantPricing;
-		'1st-edition'?: TcgplayerVariantPricing;
-		'1st-edition-holofoil'?: TcgplayerVariantPricing;
-		'unlimited'?: TcgplayerVariantPricing;
-		'unlimited-holofoil'?: TcgplayerVariantPricing;
+	} & {
+		[K in TcgplayerVariantKey]?: TcgplayerVariantPricing;
+	} & {
+		[variant: string]: TcgplayerVariantPricing | undefined;
 	}
 }
