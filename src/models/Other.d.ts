@@ -60,12 +60,9 @@ export interface VariantsDetailed {
 	 */
 	foil?: string
 	/**
-	 * IDs from third part websites
+	 * pricing data from third party websites
 	 */
-	thirdParty?: {
-		cardmarket?: number
-		tcgplayer?: number
-	}
+	pricing?: Pricing;
 	/**
 	 * A unique ID defining this variant
 	 */
@@ -73,6 +70,7 @@ export interface VariantsDetailed {
 }
 
 export interface TcgplayerVariantPricing {
+	productId: number;
 	lowPrice: number;
 	midPrice: number;
 	highPrice: number;
@@ -114,7 +112,6 @@ export interface Pricing {
 		'avg30-holo'?: number;
 	}
 	tcgplayer?: {
-		productId: number;
 		updated: string;
 		unit: string;
 	} & {
